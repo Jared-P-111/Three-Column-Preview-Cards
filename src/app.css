@@ -14,10 +14,18 @@
 
 .card-container {
   display: grid;
-  background-color: cadetblue;
   border-radius: 10px;
   overflow: hidden;
   grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.card-content {
+  text-align: left;
+  width: 70%;
+  height: 80%;
+  color: #f2f2f2;
 }
 
 .card {
