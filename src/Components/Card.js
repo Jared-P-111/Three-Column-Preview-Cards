@@ -5,7 +5,7 @@ function Card(props) {
   return (
     <div
       style={{
-        backgroundColor: ` ${props.backgroundColor}`,
+        backgroundColor: ` ${props.cardColor}`,
         display: 'flex',
         textAlign: 'center',
         height: '500px',
@@ -14,7 +14,12 @@ function Card(props) {
         alignItems: 'center',
       }}
     >
-      <CardContent icon={props.icon} />
+      <CardContent
+        icon={props.icon}
+        header={props.header}
+        description={props.description}
+        cardColor={props.cardColor}
+      />
     </div>
   );
 }
