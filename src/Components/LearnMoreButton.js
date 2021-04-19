@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const LearnMoreButton = (props) => {
+  const [hoverState, setHoverState] = useState(false);
+
   const mouseOver = () => {
-    return console.log('dammit!');
+    setHoverState(true);
+    console.log('You Hovered');
   };
+
+  const mouseLeave = () => {
+    setHoverState(false);
+    console.log('You left');
+  };
+
   return (
-    <button style={{ color: `${props.cardColor}` }} onMouseOver={mouseOver}>
-      Learn More
-    </button>
+    <>
+      {hoverState ? (
+        <button style={{ color: 'white' }} onMouseOver={mouseOver} onMouseLeave={mouseLeave}>
+          Learn More
+        </button>
+      ) : (
+        <button
+          style={{ color: `${props.cardColor}` }}
+          onMouseOver={mouseOver}
+          onMouseLeave={mouseLeave}
+        >
+          Learn More
+        </button>
+      )}
+    </>
   );
 };
 
